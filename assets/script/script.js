@@ -35,16 +35,16 @@ let minScore = Math.min(...grades);
 console.log(`Минимальный балл: ${minScore}`);
 
 // Посчитайте и выведите количество студентов, получивших положительную оценку (балл выше или равен 60). Используйте метод массива, который фильтрует оценки и оставляет только те, которые соответствуют заданному условию. Затем посчитайте количество оставшихся оценок и выведите результат.
-let numPositiveGrades = grades.filter(function (item) {
-  return item >= 60;
+let numPositiveGrades = grades.filter(function (grade) {
+  return grade >= 60;
 });
-console.log(`Количество студентов , получивших положительную оценку: ${numPositiveGrades}`);
+console.log(`Количество студентов, получивших положительную оценку:  ${numPositiveGrades.length}`);
 
 // Посчитайте и выведите количество студентов, получивших отрицательную оценку (балл ниже 60). Используйте аналогичный подход, как в предыдущем шаге.
-let numNegativeGrades = grades.filter(function (item) {
-  return item <= 60;
+let numNegativeGrades = grades.filter(function (grade) {
+  return grade <= 60;
 });
-console.log(`Количество студентов , получивших отрицательную оценку: ${numNegativeGrades}`);
+console.log(`Количество студентов, получивших отрицательную оценку: ${numNegativeGrades.length}`);
 
 // Преобразуйте числовые оценки в формат буквенных оценок A/B/C/D/E, используя следующие правила:
 // Если оценка находится в диапазоне от 80 до 100, преобразуйте её в "A"
@@ -66,4 +66,5 @@ let letterGrades = grades.map((grade) => {
 console.log(`Оценки в буквенном формате: ${letterGrades}`);
 
 // Выведите все найденные значения на экран.
-
+let resultsDiv = document.querySelector('.results');
+resultsDiv.innerHTML = `Оценки студентов: ${grades.join(', ')}`;
