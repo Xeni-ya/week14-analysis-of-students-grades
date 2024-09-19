@@ -3,6 +3,7 @@
 // Шаги выполнения:
 
 // Создайте пустой массив с именем grades и заполните массив случайными оценками от 1 до 100 для 12 студентов. Для генерации случайных оценок, используйте функцию Math.random().
+const list = document.querySelector('.one-result')
 function getRandomInt(min, max) {
 	return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -12,7 +13,10 @@ for (let i = 0; i < 12; i++) {
 	grades.push(getRandomInt(1, 100));
 }
 
-console.log(`Оценки студентов: ${grades}`);
+//console.log(`Оценки студентов: ${grades}`);
+let p = document.createElement('p');
+p.textContent = `Оценки студентов: ${grades}`;
+list.append(p);
 
 // Рассчитайте и выведите средний балл студентов, используя методы массивов.
 let sum = grades.reduce((sum, grades) => {
